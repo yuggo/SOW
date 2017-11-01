@@ -32,7 +32,10 @@
 #           of those data and plots a histogram of the data with three lines of gamma distributions, one based on
 #           the true beta, one on the chen estimate through MLE and one through the classical Erlang2 MLE. No output.
 #
-#   total_pipeline: takes as input a ???? TODO
+#   total_pipeline: takes as input an vector of ipts or a list of vectors and
+#   solves for our two parameters using a maximum likelihood (over a grid of
+#   possible parameters) and then plots the true parameter, the model estimate
+#   and a naive estimate for the rate parameters
 #
 #   _prior: takes as input a vector of parameters (p, beta) and returns their prior probability, which is based on
 #           2 independent beta(2, 2) functions
@@ -64,9 +67,15 @@
 #           format that is returned by simulate_data, and a credibility rate (credmass). It plots the point in a
 #           2D scatterplot that shows the credibility interval with colors.
 #
-#   metropolis_solution: ???? TODO
+#   metropolis_solution: takes as input a list of observations and uses the
+#   metropolis algorithm to simulate parameters. Parameter estimates are then
+#   obtained as the mean of the trajectory. Standard deviation and a posterior
+#   predicitve expeted ipt is also saved
 #
-#   metropolis_solution_all: ???? TODO
+#   metropolis_solution_all: same as above, just saves all of the trajectory
+#   and not only mean, standard deviation and posterior predictive estimate.
+#   This is required later on for the hierarchical modelling.
+#
 #   _dchen_sum_3par: takes as input vectors of ipts (ipt) and ks (k) as well as scalars beta, p0 and p1 and returns a
 #           vector of probabilities o each ipt calculated through the chen probability density function
 #
@@ -92,7 +101,10 @@
 #           true beta of those data and plots a histogram of the data with three lines of gamma distributions, one based
 #           on the true beta, one on the chen estimate through MLE and one through the classical Erlang2 MLE. No output.
 #
-#   total_pipeline_3par: takes as input a ???? TODO
+#   total_pipeline_3par: takes as input an vector of ipts or a list of vectors and
+#   solves for our two parameters using a maximum likelihood (over a grid of
+#   possible parameters, here 3 parameters in total) and then plots the true parameter, the model estimate
+#   and a naive estimate for the rate parameters
 #
 #   _prior_3par: takes as input a vector of parameters (p0, p1, beta) and returns their prior probability, which is
 #           based on 3 independent beta(2, 2) functions
@@ -109,7 +121,7 @@
 #
 #   metropolis_3par:    takes as input an x of the same format as the output of simulate_data, a starting_point, a
 #           chain_length and a burn_in (a rate) and uses a metropolis random walk to simulate the parameters. It returns
-#           the trajectory of the parameters cleaned of the initial burn_in percent. (Simulates 3d parameters)
+#           the trajectory of the parameters cleaned of the initial burn_in percent. (Simulates 3 parameters)
 #
 #   plot_trajectory_3par: takes as input the trajectory resulting from the 3par random walk as well as 3 logical
 #           parameters p0, p1 and beta, at least 2 of them must be true, the plot is either a 3d plot of the trajectory
