@@ -11,6 +11,7 @@ The first step of the model, in which the parameters are modelled with a Metropo
 The hierarchical regression of model parameters based on customer or category covariates is based on JAGS in implemented in R using rjags.
 
 ***
+# Usage
 
 `chen_utils.py` includes all necessary functions for modelling the parameters of the initial model (Likelihood, Metropolis algorithm and others)
 
