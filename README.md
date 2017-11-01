@@ -16,8 +16,8 @@ The hierarchical regression of model parameters based on customer or category co
 
 `user_simulation_utils.py` includes several helper functions for modelling the true and observed purchases of fictive users
 
-`Chen_model_intro.ipynb` provides a walkthrough through the model.
+`chen_model_intro.ipynb` provides a walkthrough through the model.
 
-`Metropolis_Simulation.ipynb` simulates several users based on predefined covariates and simulates the parameters of interest using the Metropolis-Hastings algorithm.
+`metropolis_simulation.ipynb` simulates several users based on predefined covariates and simulates the parameters of interest using the Metropolis-Hastings algorithm.
 
 This trajectory of simulations is then used in a hierarchical model in `jags_chen_simulation.R` to model the relationship between our covariates of interest and the simulated true parameters during the Metropolis-Hastings modelling. 
